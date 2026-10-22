@@ -57,10 +57,10 @@ export const featured: Project = {
     "Auditoría de operaciones",
   ],
   contributions: [
-    "Reserva pública online con disponibilidad en tiempo real mediante WebSockets y verificación de clientes por SMS (Twilio) con 2FA.",
+    "Reserva pública online con disponibilidad en tiempo real mediante WebSockets e integración del envío de SMS (Twilio) en el flujo de reserva.",
     "Módulos de productos y stock con alertas de bajo inventario, ventas manuales y reportes de balance, ingresos por período y demanda, con pruebas unitarias en JUnit y Mockito.",
-    "Frontend en Next.js: login con 2FA, gestión de servicios y usuarios, landing y configuración del despliegue en Netlify.",
-    "Documentación y pruebas de la API con colecciones de Postman.",
+    "Frontend en Next.js: gestión de servicios y usuarios, landing y configuración del despliegue en Netlify.",
+    "Mantenimiento de colecciones de Postman para probar la API.",
   ],
   stack: [
     "Java 21",
@@ -80,7 +80,7 @@ export const featured: Project = {
   ],
   stats: [
     { value: "100", label: "endpoints REST" },
-    { value: "568", label: "tests automatizados" },
+    { value: "560+", label: "casos de prueba" },
     { value: "34", label: "entidades de dominio" },
   ],
   links: [],
@@ -213,7 +213,7 @@ export const experience: Job[] = [
     period: "abr. 2026 – sep. 2026",
     summary: "Sistema de gestión para una barbería real, desarrollado en un equipo de 3.",
     bullets: [
-      "Reserva online en tiempo real con WebSockets y verificación por SMS (Twilio) con 2FA.",
+      "Reserva online en tiempo real con WebSockets e integración de SMS (Twilio).",
       "Módulos de stock, ventas manuales y reportes, con pruebas unitarias en JUnit y Mockito.",
       "Frontend en Next.js y despliegue en Netlify.",
     ],

@@ -306,7 +306,7 @@ export const education = {
   career: "Analista en Tecnologías de la Información",
   status: "Carrera en curso · 2024 – actualidad",
   degrees: [
-    { name: "Analista Programador", detail: "Título intermedio obtenido" },
+    { name: "Analista Programador", detail: "Título intermedio · octubre 2026" },
     { name: "Programador Web", detail: "Título intermedio · 2025" },
   ],
   coursework: [

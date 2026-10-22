@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #f7f7f5;
+  --bg-elev: #ffffff;
+  --bg-soft: #efefec;
+  --fg: #16171a;
+  --fg-muted: #555963;
+  --fg-subtle: #6b6f78;
+  --border: #e1e1dc;
+  --accent: #047857;
+  --accent-soft: rgba(4, 120, 87, 0.09);
+  --accent-fg: #ffffff;
+  --grid: rgba(22, 23, 26, 0.045);
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #0a0b0d;
+  --bg-elev: #111317;
+  --bg-soft: #171a1f;
+  --fg: #ecedee;
+  --fg-muted: #a4a9b3;
+  --fg-subtle: #8a909b;
+  --border: #23272e;
+  --accent: #34d399;
+  --accent-soft: rgba(52, 211, 153, 0.1);
+  --accent-fg: #052e22;
+  --grid: rgba(236, 237, 238, 0.035);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-elev: var(--bg-elev);
+  --color-soft: var(--bg-soft);
+  --color-fg: var(--fg);
+  --color-muted: var(--fg-muted);
+  --color-subtle: var(--fg-subtle);
+  --color-line: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-fg: var(--accent-fg);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+}
+
+/* Aparición al hacer scroll (ver components/Reveal.tsx). Sin JS, el contenido queda visible. */
+.reveal {
+  opacity: 1;
+}
+.js .reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
